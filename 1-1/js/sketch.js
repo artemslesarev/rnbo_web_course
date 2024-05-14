@@ -1,5 +1,3 @@
-let device;
-let context;
 
 let note = 0;
 let radius = 20;
