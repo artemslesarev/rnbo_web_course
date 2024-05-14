@@ -4,7 +4,7 @@ let keysCodes3 = [81,87,69,82,84,89,85]; //qwertyu
 
 let notes = [0,2,3,5,7,8,10,12];
 let note;
-let ix;
+let ix = 0;
 let circles = [];
 
 function setup() {
@@ -17,6 +17,7 @@ function draw() {
     for (let i=0; i<circles.length; i++) {
         circles[i].show();
         circles[i].update();
+        circles[i].joinCircles(circles.slice(i));
     }
     
 }
@@ -27,8 +28,9 @@ function keyPressed() {
         context.resume();
         if(keyIsPressed === true) {
 
-            let c = new Circle(random(0,windowWidth),random(0,windowHeight),random(10),255,255,255,alpha)
+            let c = new Circle()
             circles.push(c);
+            ix++;
 
             if(keysCodes1.includes(keyCode)) {
               ix = keysCodes1.indexOf(keyCode);
@@ -58,13 +60,13 @@ function keyReleased() {
 }
 
 class Circle {
-    constructor(x,y,d,r,g,b,a) {
-        this.x = x;
-        this.y = y;
-        this.d = d;
-        this.r = r;
-        this.g = g;
-        this.b = b;
+    constructor() {
+        this.x = random(0,windowWidth);
+        this.y = random(0,windowHeight);
+        this.d = random(10);
+        this.r = 255;
+        this.g = 255;
+        this.b = 255;
         this.a = 1;
     }
 
@@ -79,6 +81,14 @@ class Circle {
     update() {
         this.a-=0.005;
     }
+
+    joinCircles(circles) {
+        circles.forEach(e =>{
+            stroke('rgba(255,255,255,0.04)');
+            line(this.x,this.y,e.x,e.y);
+
+        });
+      }
 
 }
 
