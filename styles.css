@@ -1,0 +1,64 @@
+
+
+* {
+    font-family: 'Libre Franklin';
+    color:rgb(74, 76, 76);
+}
+
+body {
+    background-color: aliceblue !important;
+}
+
+.page {
+    margin: 20px;
+}
+
+.examples h1 {
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+.examples ul {
+    font-size: 18px;
+    width: fit-content;
+    
+}
+
+li {
+    width:fit-content;
+}
+
+.examples a {
+    text-decoration: none;
+}
+
+ul li:hover {
+    color: rgb(55, 0, 255);
+    font-weight: bold;
+}
+
+ul li {
+    display:block;
+    text-align:center;
+}
+
+ul li:before {
+    content: "• ";
+  }
+
+.howto {
+    margin: 30px;
+}
+
+.howto a {
+    margin-left: 10px;
+}
+.howto a:hover {
+    color: rgb(55, 0, 255);
+}
+
+.manual {
+    display: none;
+}
+
+
