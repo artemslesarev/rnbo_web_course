@@ -96,7 +96,7 @@ function draw() {
         ring.normalizedValue = deltaYNormalized;
         
         noStroke();
-        fill(100,50,50+mouseY);                         //change color
+        fill(150,50,50+mouseY);                         //change color
         ellipse(mouseX,mouseY,radius+10,radius+10);
 
         } 
